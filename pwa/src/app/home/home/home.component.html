@@ -1,0 +1,66 @@
+<div class="pushNot">
+  {{message | async | json}}
+</div>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="panelOpenState" (opened)="panelOpenState = true"  (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Note
+      </mat-panel-title>
+      <mat-panel-description>
+        Create or Edit a New Nota
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="note.title">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="note.category">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="note.description"></textarea>
+    </mat-form-field>
+    <section class="example-section">
+      <mat-checkbox color="primary" class="example-margin" [(ngModel)]="note.done">
+        Done
+      </mat-checkbox>
+    </section>
+    <button (click)="saveNote()" color="primary" mat-raised-button>
+      <mat-icon>pets</mat-icon>
+      Save
+    </button>
+    <button (click)="clearNote()" color="primary" mat-raised-button>
+      <mat-icon>delete</mat-icon>
+      Cancel
+    </button>
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-list class="example-viewport">
+  <h3 mat-subheader>Notes</h3>
+  <mat-list-item  *ngFor="let note of notes; last as last">
+    <button mat-icon-button aria-label="edit">
+      <mat-icon (click)="seleccionarNota(note)" mat-list-icon>event_note</mat-icon>
+    </button>
+    <h4 mat-line>{{note.title}}</h4>
+    <p mat-line> {{note.description}} </p>
+    <small mat-line>Category: {{note.category}} / Created On:{{note.createdOn | date:'mediumDate'  }} </small>
+    <button mat-icon-button aria-label="delete">
+      <mat-icon (click)="openDialog(note)">delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+
+
+

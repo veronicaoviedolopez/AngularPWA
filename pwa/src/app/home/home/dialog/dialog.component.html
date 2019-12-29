@@ -1,0 +1,9 @@
+<small mat-dialog-title>Delete note</small>
+<mat-dialog-content>
+  Are you sure you want to remove the note "
+  <em><strong><mark><ins> {{data.title}} </ins></mark></strong></em> " ?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" [mat-dialog-close]="data" cdkFocusInitial>Acept</button>
+</mat-dialog-actions>

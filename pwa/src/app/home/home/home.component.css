@@ -1,0 +1,28 @@
+@media only screen and (max-device-width:768px){
+  .mat-form-field{
+    width: 100%;
+    margin-left: 15px;
+    width: calc(100% - 30px);
+    font-size: 15px;
+  }
+  .mat-icon {
+    font-size: 16px;
+  }
+}
+.example-viewport {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+mat-form-field {
+  margin-left: 15px;
+  width: calc(100% - 30px);
+}
+.pushNot {
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: 1px 1px yellow;
+}
+

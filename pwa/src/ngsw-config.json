@@ -26,14 +26,15 @@
   ],
   "dataGroups": [
     {
-      "name": "redditAPI",
+      "name": "FirebaseAPI",
       "urls": [
-        "https://www.reddit.com/r/pics.json"
+        "https://chestynotes.firebaseio.com/**"
       ],
       "cacheConfig": {
-        "strategy": "performance",
-        "maxAge": "1d",
-        "maxSize": 100
+        "strategy": "freshness",
+        "maxAge": "2h",
+        "maxSize": 100,
+        "timeout": "5s"
       }
     }
   ]

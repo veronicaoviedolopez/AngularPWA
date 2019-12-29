@@ -5,7 +5,8 @@
   "background_color": "transparent",
   "display": "fullscreen",
   "scope": "/",
-  "start_url": "http://127.0.0.1:8080",
+  "start_url": "https://chestynotes.firebaseapp.com",
+  "gcm_sender_id": "103953800507",
   "icons": [
     {
       "src": "assets/icons/icon-72x72.png",
