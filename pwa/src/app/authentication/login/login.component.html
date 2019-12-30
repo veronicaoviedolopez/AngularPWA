@@ -1,9 +1,18 @@
 <!-- Calling GoogleAuth() Api from AuthService -->
-<div class="formGroup">
-  <button type="button" (click)="login()">
-    Log in with Google
-  </button>
-  <button type="button" (click)="logOut()">
-    Log out with Google
-  </button>
-</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Log In</mat-card-title>
+    <mat-card-subtitle>Log in with google account</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      You can create notes in this app!
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()">
+      Log in with Google
+    </button>
+  </mat-card-actions>
+</mat-card>

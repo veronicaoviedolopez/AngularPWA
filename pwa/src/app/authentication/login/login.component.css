@@ -1,0 +1,8 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/chestynotes.appspot.com/o/icon-72x72.png?alt=media&token=387e90be-154e-45e3-ba2d-33f57c1af939');
+  background-size: cover;
+}
