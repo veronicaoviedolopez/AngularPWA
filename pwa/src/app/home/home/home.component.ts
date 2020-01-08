@@ -30,13 +30,8 @@ export class HomeComponent implements OnInit {
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private authService: AuthService,
-    private router: Router,
-    private messagingService: MessagingService
-  ) {
-    this.messagingService.getPermission();
-    this.messagingService.receiveMessage();
-    this.message = this.messagingService.currentMessage;
-  }
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.authService.logedUser().subscribe(resp => {

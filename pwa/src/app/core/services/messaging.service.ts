@@ -14,17 +14,8 @@ export class MessagingService {
 
   constructor(
     private db: AngularFireDatabase,
-    private afAuth: AngularFireAuth,
-    private angularFireMessaging: AngularFireMessaging
-  ) {
-    // this.angularFireMessaging.messaging.subscribe(
-    //   tslint:disable-next-line:variable-name
-    //   _messaging => {
-    //     _messaging.onMessage = _messaging.onMessage.bind(_messaging);
-    //     _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
-    //   }
-    // );
-  }
+    private afAuth: AngularFireAuth
+  ) {}
 
   updateToken(token) {
     this.afAuth.authState.pipe(take(1)).subscribe(user => {
@@ -33,8 +24,6 @@ export class MessagingService {
         return;
       }
       const data = { [user.uid]: token };
-      //const data = {};
-      //data[user.uid] = token;
       this.db.object('fcmTokens/').update(data);
     });
   }

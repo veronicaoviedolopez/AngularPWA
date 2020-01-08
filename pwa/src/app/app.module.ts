@@ -13,8 +13,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MessagingService } from './core/services/messaging.service';
-import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AuthService } from './core/services/auth/auth.service';
+import { NotesService } from './core/services/notes.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,9 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule
   ],
-  providers: [MessagingService, AngularFireDatabase],
+  providers: [MessagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
